@@ -1,0 +1,14 @@
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	glog = log --graph --decorate=short
+[color]
+	ui = true
+[diff]
+	tool = meld
+[merge]
+	tool = meld
+[core]
+	editor = vim
