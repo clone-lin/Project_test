@@ -11,6 +11,10 @@ set cindent
 set cursorline
 set nu
 set incsearch
+set hlsearch
+
+" Set background light or dark
+set bg=dark
 
 " Replace tab to space when saving file.
 autocmd FileType javascript,python set expandtab
