@@ -16,13 +16,14 @@ set hlsearch
 " Set background light or dark
 set bg=dark
 
+" For powerline
+set laststatus=2
+set t_Co=256
+
 " Replace tab to space when saving file.
 autocmd FileType javascript,python set expandtab
 
-" Show space in color
-highlight WhitespaceEOL ctermbg=red guibg=red
-match WhitespaceEOL /\s\+$/
-
+nmap <F5> :NERDTree<CR>
 nmap <F8> :TagbarToggle<CR>
 
 " Gtags variables
@@ -75,6 +76,12 @@ Plugin 'kylef/apiblueprint.vim'
 Plugin 'majutsushi/tagbar'
 " For JavaScript
 Plugin 'marijnh/tern_for_vim'
+" tree directory
+Plugin 'scrooloose/nerdtree'
+" status line
+Plugin 'Lokaltog/vim-powerline'
+" show trail space
+Plugin 'bronson/vim-trailing-whitespace'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
