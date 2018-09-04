@@ -35,6 +35,9 @@ let GtagsCscope_Auto_Map = 1
 let GtagsCscope_Auto_Load = 1
 set cscopetag
 
+" IndentLine
+let g:indentLine_char="│"
+
 
 "
 " Vundle Vim Config
@@ -82,6 +85,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Lokaltog/vim-powerline'
 " show trail space
 Plugin 'bronson/vim-trailing-whitespace'
+" show indent line
+Plugin 'Yggdroot/indentLine'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
