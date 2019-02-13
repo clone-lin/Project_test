@@ -21,7 +21,11 @@ set laststatus=2
 set t_Co=256
 
 " Replace tab to space when saving file.
-autocmd FileType javascript,python set expandtab
+autocmd FileType html,xhtml,xml,xslt,xsd,javascript set expandtab
+autocmd FileType perl,python,java set expandtab
+
+" Other filetypes where we want spaces instead of tabs
+autocmd FileType markdown,yaml set expandtab shiftwidth=2
 
 nmap <F5> :NERDTree<CR>
 nmap <F8> :TagbarToggle<CR>
