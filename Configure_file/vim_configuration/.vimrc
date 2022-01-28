@@ -28,7 +28,7 @@ autocmd FileType perl,python,java set expandtab
 autocmd FileType markdown,yaml set expandtab shiftwidth=2
 
 nmap <F5> :NERDTree<CR>
-nmap <F8> :TagbarToggle<CR>
+nmap <F8> :Vista<CR>
 
 " Gtags variables
 let Gtags_Auro_Map = 1
@@ -38,9 +38,6 @@ let Gtags_Auto_Update = 1
 let GtagsCscope_Auto_Map = 1
 let GtagsCscope_Auto_Load = 1
 set cscopetag
-
-" IndentLine
-let g:indentLine_char="│"
 
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
@@ -55,8 +52,8 @@ Plug 'Valloric/YouCompleteMe'
 " apiblueprint plugin
 Plug 'kylef/apiblueprint.vim'
 
-" Tagbar: a class outline viewer for Vim
-Plug 'majutsushi/tagbar'
+" Tagbar
+Plug 'liuchengxu/vista.vim'
 
 " For JavaScript
 Plug 'marijnh/tern_for_vim'
@@ -76,6 +73,9 @@ Plug 'Yggdroot/indentLine'
 " Initialize plugin system
 call plug#end()
 
+" IndentLine Configure
+let g:indentLine_char="│"
+
 " YouCompleteMe Configure
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
 let g:ycm_complete_in_comments = 1   " auto complement in comments
@@ -83,4 +83,30 @@ let g:ycm_complete_in_strings = 1
 let g:ycm_collect_identifiers_from_tags_files=1
 let g:ycm_seed_identifiers_with_syntax=1
 set completeopt=longest,menu
+
+" vista.vim Configure
+function! NearestMethodOrFunction() abort
+	return get(b:, 'vista_nearest_method_or_function', '')
+endfunction
+
+set statusline+=%{NearestMethodOrFunction()}
+
+" By default vista.vim never run if you don't call it explicitly.
+"
+" If you want to show the nearest function in your statusline automatically,
+" you can add the following line to your vimrc
+autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
+
+" Executive used when opening vista sidebar without specifying it.
+" See all the avaliable executives via `:echo g:vista#executives`.
+let g:vista_default_executive = 'ctags'
+
+" The default icons can't be suitable for all the filetypes, you can extend it as you wish.
+let g:vista#renderer#icons = {
+\   "function": "\uf794",
+\   "variable": "\uf71b",
+\  }
+
+" Disable the icon in vista.vim
+let g:vista#renderer#enable_icon = 0
 
