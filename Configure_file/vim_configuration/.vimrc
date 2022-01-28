@@ -101,12 +101,6 @@ autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 " See all the avaliable executives via `:echo g:vista#executives`.
 let g:vista_default_executive = 'ctags'
 
-" The default icons can't be suitable for all the filetypes, you can extend it as you wish.
-let g:vista#renderer#icons = {
-\   "function": "\uf794",
-\   "variable": "\uf71b",
-\  }
-
 " Disable the icon in vista.vim
 let g:vista#renderer#enable_icon = 0
 
