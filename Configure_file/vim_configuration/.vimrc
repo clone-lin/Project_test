@@ -28,7 +28,7 @@ autocmd FileType perl,python,java set expandtab
 autocmd FileType markdown,yaml set expandtab shiftwidth=2
 
 nmap <F5> :NERDTree<CR>
-nmap <F8> :Vista<CR>
+nmap <F8> :TagbarToggle<CR>
 
 " Gtags variables
 let Gtags_Auro_Map = 1
@@ -53,7 +53,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'kylef/apiblueprint.vim'
 
 " Tagbar
-Plug 'liuchengxu/vista.vim'
+Plug 'preservim/tagbar'
 
 " For JavaScript
 Plug 'marijnh/tern_for_vim'
@@ -83,24 +83,3 @@ let g:ycm_complete_in_strings = 1
 let g:ycm_collect_identifiers_from_tags_files=1
 let g:ycm_seed_identifiers_with_syntax=1
 set completeopt=longest,menu
-
-" vista.vim Configure
-function! NearestMethodOrFunction() abort
-	return get(b:, 'vista_nearest_method_or_function', '')
-endfunction
-
-set statusline+=%{NearestMethodOrFunction()}
-
-" By default vista.vim never run if you don't call it explicitly.
-"
-" If you want to show the nearest function in your statusline automatically,
-" you can add the following line to your vimrc
-autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
-
-" Executive used when opening vista sidebar without specifying it.
-" See all the avaliable executives via `:echo g:vista#executives`.
-let g:vista_default_executive = 'ctags'
-
-" Disable the icon in vista.vim
-let g:vista#renderer#enable_icon = 0
-
