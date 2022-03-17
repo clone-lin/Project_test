@@ -71,6 +71,30 @@ let g:airline_symbols.colnr = ' ㏇:'
 
 " Gen_tags
 let g:loaded_gentags#ctags = 1
+:nmap <C-\><C-n> :tn<CR>
+:nmap <C-\><C-p> :tp<CR>
+" normal command
+:nmap <C-\>a :cs find a <C-R>=expand("<cword>")<CR><CR>
+" Using 'CTRL-spacebar', the result is displayed in new horizontal window.
+:nmap <C-SPACE>s :scs find s <C-R>=expand("<cword>")<CR><CR>
+:nmap <C-SPACE>g :scs find g <C-R>=expand("<cword>")<CR><CR>
+:nmap <C-SPACE>c :scs find c <C-R>=expand("<cword>")<CR><CR>
+:nmap <C-SPACE>t :scs find t <C-R>=expand("<cword>")<CR><CR>
+:nmap <C-SPACE>e :scs find e <C-R>=expand("<cword>")<CR><CR>
+:nmap <C-SPACE>f :scs find f <C-R>=expand("<cfile>")<CR><CR>
+:nmap <C-SPACE>i :scs find i <C-R>=expand("<cfile>")<CR><CR>
+:nmap <C-SPACE>a :scs find a <C-R>=expand("<cword>")<CR><CR>
+":nmap <C-@>d :scs find d <C-R>=expand("<cword>")<CR><CR>
+" Hitting CTRL-space *twice*, the result is displayed in new vertical window.
+:nmap <C-SPACE><C-SPACE>s :vert scs find s <C-R>=expand("<cword>")<CR><CR>
+:nmap <C-SPACE><C-SPACE>g :vert scs find g <C-R>=expand("<cword>")<CR><CR>
+:nmap <C-SPACE><C-SPACE>c :vert scs find c <C-R>=expand("<cword>")<CR><CR>
+:nmap <C-SPACE><C-SPACE>t :vert scs find t <C-R>=expand("<cword>")<CR><CR>
+:nmap <C-SPACE><C-SPACE>e :vert scs find e <C-R>=expand("<cword>")<CR><CR>
+:nmap <C-SPACE><C-SPACE>f :vert scs find f <C-R>=expand("<cfile>")<CR><CR>
+:nmap <C-SPACE><C-SPACE>i :vert scs find i <C-R>=expand("<cfile>")<CR><CR>
+:nmap <C-SPACE><C-SPACE>a :vert scs find a <C-R>=expand("<cword>")<CR><CR>
+":nmap <C-@><C-@>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
