@@ -27,7 +27,7 @@ You can use command `:echo stdpath('config')` inside Neovim to find this directo
 1. Install Gtags from source code
 2. Edit `~/.bashrc`
 
-- ```bash
+```bash
 export GTAGSCONF=/usr/local/share/gtags/gtags.conf
 export GTAGSLABEL=pygments
 ```
