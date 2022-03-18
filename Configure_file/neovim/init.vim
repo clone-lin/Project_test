@@ -22,6 +22,9 @@ Plug 'jsfaint/gen_tags.vim'
 " Tagbar
 Plug 'preservim/tagbar'
 
+" Fugitive is the premier Vim plugin for Git.
+Plug 'tpope/vim-fugitive'
+
 " Supertab is a vim plugin which allows you to use <Tab> for all your insert completion needs
 Plug 'ervandew/supertab'
 
