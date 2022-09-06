@@ -16,9 +16,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" Async plugin for Vim/NeoVim to ease the use of ctags/gtags.
-Plug 'jsfaint/gen_tags.vim'
-
 " Tagbar
 Plug 'preservim/tagbar'
 
@@ -72,32 +69,6 @@ endif
 " unicode symbols
 let g:airline_symbols.colnr = ' ㏇:'
 
-" Gen_tags
-let g:loaded_gentags#ctags = 1
-:nmap <C-\><C-n> :tn<CR>
-:nmap <C-\><C-p> :tp<CR>
-" normal command
-:nmap <C-\>a :cs find a <C-R>=expand("<cword>")<CR><CR>
-" Using 'CTRL-spacebar', the result is displayed in new horizontal window.
-:nmap <C-SPACE>s :scs find s <C-R>=expand("<cword>")<CR><CR>
-:nmap <C-SPACE>g :scs find g <C-R>=expand("<cword>")<CR><CR>
-:nmap <C-SPACE>c :scs find c <C-R>=expand("<cword>")<CR><CR>
-:nmap <C-SPACE>t :scs find t <C-R>=expand("<cword>")<CR><CR>
-:nmap <C-SPACE>e :scs find e <C-R>=expand("<cword>")<CR><CR>
-:nmap <C-SPACE>f :scs find f <C-R>=expand("<cfile>")<CR><CR>
-:nmap <C-SPACE>i :scs find i <C-R>=expand("<cfile>")<CR><CR>
-:nmap <C-SPACE>a :scs find a <C-R>=expand("<cword>")<CR><CR>
-":nmap <C-@>d :scs find d <C-R>=expand("<cword>")<CR><CR>
-" Hitting CTRL-space *twice*, the result is displayed in new vertical window.
-:nmap <C-SPACE><C-SPACE>s :vert scs find s <C-R>=expand("<cword>")<CR><CR>
-:nmap <C-SPACE><C-SPACE>g :vert scs find g <C-R>=expand("<cword>")<CR><CR>
-:nmap <C-SPACE><C-SPACE>c :vert scs find c <C-R>=expand("<cword>")<CR><CR>
-:nmap <C-SPACE><C-SPACE>t :vert scs find t <C-R>=expand("<cword>")<CR><CR>
-:nmap <C-SPACE><C-SPACE>e :vert scs find e <C-R>=expand("<cword>")<CR><CR>
-:nmap <C-SPACE><C-SPACE>f :vert scs find f <C-R>=expand("<cfile>")<CR><CR>
-:nmap <C-SPACE><C-SPACE>i :vert scs find i <C-R>=expand("<cfile>")<CR><CR>
-:nmap <C-SPACE><C-SPACE>a :vert scs find a <C-R>=expand("<cword>")<CR><CR>
-":nmap <C-@><C-@>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
@@ -107,4 +78,16 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " IndentLine
 let g:indentLine_char="│"
+
+" Gtags
+" 1. Put the following lines to the `~/.bashrc`
+"   # Gtags
+"   export GTAGSCONF=/usr/local/share/gtags/gtags.conf
+"   export GTAGSLABEL=pygments
+" 2. Copy `gtags.vim` and `gtags-cscope.vim` to `.local/share/nvim/site/plugin`
+let Gtags_Auro_Map = 1
+let Gtags_Auto_Update = 1
+let GtagsCscope_Auto_Map = 1
+let GtagsCscope_Auto_Load = 1
+set cscopetag
 
